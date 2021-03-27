@@ -1,0 +1,9 @@
+#docker run -v $HOME/.aws:/root/.aws dev aws s3 ls
+#samとRain入ってない
+FROM amazonlinux:2.0.20210219.0
+
+RUN yum update -y
+RUN yum install -y unzip 
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.1.29.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
